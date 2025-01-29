@@ -6,8 +6,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients
 
 @SpringBootApplication
 @EnableFeignClients
-class SampleDemoApplication
+class ReactorDemoApplication
 
 fun main(args: Array<String>) {
-    runApplication<SampleDemoApplication>(*args)
+    runApplication<ReactorDemoApplication>(*args)
 }

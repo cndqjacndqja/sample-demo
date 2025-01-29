@@ -11,7 +11,8 @@ class DemoController(
     private val demoService: DemoService
 ) {
     @GetMapping
-    fun getAll(): String {
+    fun getAll() : String {
+        Thread.sleep(1000)
         return "Hello, World!"
     }
 }

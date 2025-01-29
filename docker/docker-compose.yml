@@ -15,4 +15,4 @@ services:
     links:
       - controller
     deploy:
-      replicas: 3    # 에이전트 개수를 3개로 설정
+      replicas: 50    # 에이전트 개수를 3개로 설정
