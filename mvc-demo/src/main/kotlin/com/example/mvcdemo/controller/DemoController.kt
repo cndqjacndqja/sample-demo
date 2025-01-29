@@ -1,7 +1,6 @@
-package com.example.reactordemo.controller
+package com.example.mvcdemo.controller
 
-import com.example.reactordemo.client.SampleClient
-import com.example.reactordemo.service.DemoService
+import com.example.mvcdemo.service.DemoService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -9,11 +8,10 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/api/demo")
 class DemoController(
-    private val demoService: DemoService,
-    private val sampleClient: SampleClient
+    private val demoService: DemoService
 ) {
     @GetMapping
     fun getAll(): String {
-        return sampleClient.getSomeData()
+        return "Hello, World!"
     }
 }

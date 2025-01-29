@@ -39,7 +39,7 @@ subprojects {
         "testImplementation"("io.projectreactor:reactor-test")
         "testImplementation"("org.jetbrains.kotlin:kotlin-test-junit5")
         "testRuntimeOnly"("org.junit.platform:junit-platform-launcher")
-        "implementation"("org.springframework.cloud:spring-cloud-starter-openfeign:4.2.0")
+        "implementation"("org.springframework.cloud:spring-cloud-starter-openfeign:4.1.0")
     }
 
     tasks.withType<Test> {
