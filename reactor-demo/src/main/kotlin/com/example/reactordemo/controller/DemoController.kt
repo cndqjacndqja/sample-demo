@@ -1,5 +1,6 @@
 package com.example.reactordemo.controller
 
+import com.example.reactordemo.service.DemoService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -9,18 +10,15 @@ import reactor.core.publisher.Mono
 @RestController
 @RequestMapping("/api/demo")
 class DemoController(
-    private val webClient: WebClient,
+    private val demoService: DemoService,
 ) {
     @GetMapping
     fun getAll(): Mono<String> {
-        return webClient
-            .get()
-            .uri("/api/demo")
-            .retrieve()
-            .bodyToMono(String::class.java)
-            .onErrorResume { error ->
-                // 에러 처리 로직
-                Mono.error(error)
-            }
+        return Mono.zip(
+            demoService.find(),
+            demoService.find()
+        ) { result1, result2 ->
+            "$result1, $result2"
+        }
     }
 }

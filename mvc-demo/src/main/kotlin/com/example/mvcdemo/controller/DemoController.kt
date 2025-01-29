@@ -12,7 +12,7 @@ class DemoController(
 ) {
     @GetMapping
     fun getAll() : String {
-        Thread.sleep(1000)
+        Thread.sleep(300)
         return "Hello, World!"
     }
 }
